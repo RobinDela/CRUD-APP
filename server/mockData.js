@@ -25,4 +25,4 @@ const crews = [
     },
 ];
 
-module.export = { crews };
+module.exports = { crews };
