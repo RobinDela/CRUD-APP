@@ -1,7 +1,7 @@
 const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLSchema, GraphQLList } = require('graphql');
 const { crews } = require('../mockData.js');
+const Crews = require('../models/Crews');
 
-// const { GraphQLObjectType } = require('graphql');
 
 const CrewsType = new GraphQLObjectType({
     name: 'Crew',
@@ -22,14 +22,14 @@ const RootQuery = new GraphQLObjectType({
         crews: {
             type: new GraphQLList(CrewsType),
             resolve(parent, args) {
-                return crews;
+                return Crews.find();
             }
         },
         crew: {
             type: CrewsType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return crews.find(crew => crew.id === args.id);
+                return Crews.findById(args.id)
             }
         }
     }
