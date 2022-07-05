@@ -18,4 +18,4 @@ const CrewsSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Client', CrewsSchema);
+module.exports = mongoose.model('Crews', CrewsSchema);
