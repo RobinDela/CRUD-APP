@@ -53,16 +53,18 @@ h1 {
 
 }
 
-.crews-container-img {
-  display: flex;
-  justify-content: center;
-}
-
-
-
 .crews-gallery {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
+}
+
+.crews-container-img {
+  display: flex;
+  justify-content: center;
+}
+
+.card-text {
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 
+export default function Header({ data }) {
 
-export default function Header() {
     return (
-        <div>Header</div>
+        <div>You have {data.crews.length} Crew members</div>
     )
 }
