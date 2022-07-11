@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 
 
 
-function App() {
+const App = () => {
 
   const { loading, error, data } = useQuery(GET_CREWS)
 
@@ -15,13 +15,13 @@ function App() {
   if (error) return <p>ERROR couldn't load data</p>
   return (
     <>
-      <div>
+      <div className="header-content">
         <Header data={data} />
-        <div className='container'>
-          <AddCrewModal />
-          <Crews data={data} />
-        </div>
+        <AddCrewModal />
       </div>
+      <Crews data={data} />
+
+
     </>
   );
 }
