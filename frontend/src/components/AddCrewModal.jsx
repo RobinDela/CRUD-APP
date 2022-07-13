@@ -26,6 +26,10 @@ export default function AddCrewModal() {
         addCrew(name, gender, speciality, experience, weapon);
         setName('');
     };
+    const capitalize = (s) => {
+        // if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
     return (
         <>
             <div className="modal-button">
@@ -52,15 +56,15 @@ export default function AddCrewModal() {
                                     <input type="text"
                                         maxLength="10"
                                         className="form-control" id='name'
-                                        value={name}
+                                        value={capitalize(name)}
                                         onChange={(e) => setName(e.target.value)} />
                                 </div>
                                 <div className='mb-3'>
                                     <label className="form-label">Gender</label>
                                     <select className="form-select" id='gender' value={gender}
                                         onChange={(e) => setGender(e.target.value)}>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                 </div>
                                 <div className='mb-3'>
